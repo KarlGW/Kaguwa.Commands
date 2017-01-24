@@ -36,10 +36,10 @@ namespace Kaguwa.Commands.Network
         [Parameter(Position = 1)]
         [Alias("Connection")]
         [ValidateSet(
-            "ESTABLISHED",
-            "LISTENING",
-            "TIME_WAIT",
-            "CLOSING"
+            "Established",
+            "Listening",
+            "Time_Wait",
+            "Closing"
             )]
         public string State
         {
@@ -71,8 +71,7 @@ namespace Kaguwa.Commands.Network
             }
             else if (ProcessId != null)
             {
-                connections = connections.Where(connection => Regex.IsMatch(connection.ProcessId.ToString(),
-                                                string.Format("^(?:{0})", string.Join("|", ProcessId))));
+                connections = connections.Where(connection => ProcessId.Contains(connection.ProcessId));
             }
 
             // Check if state was specified.
