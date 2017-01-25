@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Connections.cs" />
     <Compile Include="GetNetworkConnectionCommand.cs" />
+    <Compile Include="GetNetworkHostCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\NetworkConnection.cs" />
   </ItemGroup>
