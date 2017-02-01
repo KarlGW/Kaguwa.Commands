@@ -38,6 +38,9 @@ It works kind of like the *nix command `host`.
 
 ##Versions and updates
 
+###0.2.6242.1123
+* Changed `Kaguwa.Commands.Network.Types.NetworkConnection`, properties `RemoteAddress` and `LocalAddress` are now of type `String` instead of `IPAddress`. This to make it compatible with other cmdlets.
+
 ###0.2.6241.41758
 Added several features.
 
