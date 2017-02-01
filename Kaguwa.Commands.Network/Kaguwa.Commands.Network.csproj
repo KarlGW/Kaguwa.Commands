@@ -33,7 +33,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kaguwa.Network, Version=0.1.6229.38178, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Kaguwa.Network, Version=0.1.6234.2343, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Kaguwa.Network\Kaguwa.Network\bin\Release\Kaguwa.Network.dll</HintPath>
     </Reference>
