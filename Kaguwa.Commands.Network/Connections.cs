@@ -40,9 +40,9 @@ namespace Kaguwa.Commands.Network
                 connections.Add(new Types.NetworkConnection
                 {
                     Protocol = connection.Protocol.ToString(),
-                    LocalAddress = connection.LocalAddress,
+                    LocalAddress = connection.LocalAddress.ToString(),
                     LocalPort = connection.LocalPort,
-                    RemoteAddress = connection.RemoteAddress,
+                    RemoteAddress = connection.RemoteAddress.ToString(),
                     RemotePort = connection.RemotePort,
                     State = connection.State.ToString(),
                     ProcessId = connection.ProcessId,
@@ -55,9 +55,9 @@ namespace Kaguwa.Commands.Network
                 connections.Add(new Types.NetworkConnection
                 {
                     Protocol = connection.Protocol.ToString(),
-                    LocalAddress = connection.LocalAddress,
+                    LocalAddress = connection.LocalAddress.ToString(),
                     LocalPort = connection.LocalPort,
-                    RemoteAddress = connection.RemoteAddress,
+                    RemoteAddress = connection.RemoteAddress.ToString(),
                     RemotePort = connection.RemotePort,
                     State = connection.State.ToString(),
                     ProcessId = connection.ProcessId,
@@ -70,7 +70,7 @@ namespace Kaguwa.Commands.Network
                 connections.Add(new Types.NetworkConnection
                 {
                     Protocol = connection.Protocol.ToString(),
-                    LocalAddress = connection.LocalAddress,
+                    LocalAddress = connection.LocalAddress.ToString(),
                     LocalPort = connection.LocalPort,
                     ProcessId = connection.ProcessId,
                     ProcessName = connection.ProcessName
@@ -82,7 +82,7 @@ namespace Kaguwa.Commands.Network
                 connections.Add(new Types.NetworkConnection
                 {
                     Protocol = connection.Protocol.ToString(),
-                    LocalAddress = connection.LocalAddress,
+                    LocalAddress = connection.LocalAddress.ToString(),
                     LocalPort = connection.LocalPort,
                     ProcessId = connection.ProcessId,
                     ProcessName = connection.ProcessName
