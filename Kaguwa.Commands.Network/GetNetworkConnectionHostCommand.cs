@@ -11,12 +11,13 @@ namespace Kaguwa.Commands.Network
     [OutputType(typeof(Host))]
     public class GetNetworkConnectionHostCommand : Cmdlet
     {
-        // Define parameters.
+        #region Parameters
+
         [Parameter(
             Position = 0,
             ValueFromPipeline = true,
             ValueFromPipelineByPropertyName = true)]
-        [Alias("HostName", "IPAddress", "Address", "RemoteAddress")]
+        [Alias("IPAddress", "Address", "RemoteAddress")]
         [AllowNull()]
         [AllowEmptyString()]
         public string[] Host
@@ -26,7 +27,11 @@ namespace Kaguwa.Commands.Network
         }
         private string[] host;
 
+        #endregion Parameters
+
         List<Host> _host = new List<Host>();
+
+        #region CmdletOverrides
 
         protected override void ProcessRecord()
         {
@@ -38,19 +43,25 @@ namespace Kaguwa.Commands.Network
             }
             else
             {
-                for(int i = 0; i < host.Length; i++)
+                foreach (string h in host)
                 {
-                    // Strip protocol from Url.
-                    if (!string.IsNullOrEmpty(host[i]))
+                    if (!string.IsNullOrEmpty(h))
                     {
+                        string entry = null;
                         Regex rgx = new Regex(@"^(http|https)://");
-                        host[i] = rgx.Replace(host[i], string.Empty);
-                        _host.Add(Dns.GetHost(host[i]));
+                        entry = rgx.Replace(h, string.Empty);
+                        _host.Add(Dns.GetHost(entry));
                     }
                 }
             }
+        }
 
+        protected override void EndProcessing()
+        {
+            base.EndProcessing();
             WriteObject(_host);
         }
+
+        #endregion CmdletOverrides
     }
 }
